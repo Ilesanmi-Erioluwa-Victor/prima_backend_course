@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cookieParser());
+
 app.get('/', (req, res, next) => {
   res.send('Hi from youtube live...');
 });
