@@ -2,7 +2,7 @@ import express from 'express';
 
 const app = express();
 
-app.get("/home", (req, res, next) => {
+app.get("/", (req, res, next) => {
     res.send("Hi from youtube live...")
 })
 
