@@ -13,5 +13,13 @@ export const signUp = async (
       if (!name || !email || !password) {
           throw new Error("Please provide all required fields")
       }
+
+      const user = await prisma.user.create({
+          data: {
+              name,
+              email,
+              password
+          }
+      })
   } catch (error) {}
 };
