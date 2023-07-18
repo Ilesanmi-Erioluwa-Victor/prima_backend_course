@@ -2,7 +2,7 @@ import { getJwtToken } from '../helpers/getJwtToken';
 import Response from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-const cookieToken = (user: any, res: any) => {
+export const cookieToken = (user: any, res: any) => {
   const token: string = getJwtToken(user.id);
 
   const options = {
