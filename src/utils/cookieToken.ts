@@ -1,5 +1,4 @@
 import { getJwtToken } from '../helpers/getJwtToken';
-import Response from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 export const cookieToken = (user: any, res: any) => {
