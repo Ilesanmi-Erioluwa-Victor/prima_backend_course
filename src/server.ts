@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.use('/api/v1/user', router);
+app.use('/api/v1/user/', router);
 
 app.listen(5000, () => {
   console.log('Server running on port 5000');
