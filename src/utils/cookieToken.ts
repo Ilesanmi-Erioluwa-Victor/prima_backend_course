@@ -1,7 +1,8 @@
 import { getJwtToken } from '../helpers/getJwtToken';
 import Response from 'express';
+import { StatusCodes } from 'http-status-codes';
 
-const cookieToken = (user: any, res: Response) => {
+const cookieToken = (user: any, res: any) => {
   const token: string = getJwtToken(user.id);
 
   const options = {
@@ -10,4 +11,8 @@ const cookieToken = (user: any, res: Response) => {
   };
 
   user.password = undefined;
+  res.status(StatusCodes.OK).cookie('userToken', token, options).json({
+    success: true,
+    token,
+  });
 };
