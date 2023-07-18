@@ -3,7 +3,7 @@ import { cookieToken } from '../utils/cookieToken';
 import { Response, Request, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-export const signUp = async (
+export const sign_up = async (
   req: Request,
   res: Response,
   next: NextFunction
