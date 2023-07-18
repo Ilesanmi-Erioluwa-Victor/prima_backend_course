@@ -1,6 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
+import router from './routes/user';
 
 dotenv.config();
 
@@ -11,9 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.get('/', (req, res, next) => {
-  res.send('Hi from youtube live...');
-});
+app.use('/api/v1/user', router);
 
 app.listen(5000, () => {
   console.log('Server running on port 5000');
